@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacBook 加拿大法语键盘 (CSA) 快捷键指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 自定义按键样式 */
+        kbd {
+            font-family: theme('fontFamily.mono');
+            background-color: #f3f4f6;
+            color: #1f2937;
+            border: 1px solid #d1d5db;
+            border-bottom-width: 2px;
+            border-radius: 0.375rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875em;
+            display: inline-block;
+            line-height: 1;
+        }
+        .dark kbd {
+            background-color: #374151;
+            color: #f3f4f6;
+            border-color: #4b5563;
+        }
+        
+        /* 复制字符的悬浮效果 */
+        .copyable {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+        .copyable:hover {
+            transform: scale(1.1);
+            color: #2563eb;
+        }
+        .dark .copyable:hover {
+            color: #60a5fa;
+        }
+        .copyable:active {
+            transform: scale(0.95);
+        }
+
+        /* Toast 提示框动画 */
+        #toast {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s linear;
+        }
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 min-h-screen pb-12">
+
+    <!-- 顶部导航与标题 -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-10">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                MacBook CSA 键盘指南
+            </h1>
+            <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" title="切换深色/浅色模式">
+                <!-- 太阳图标 (深色模式显示) -->
+                <svg id="sunIcon" class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <!-- 月亮图标 (浅色模式显示) -->
+                <svg id="moonIcon" class="w-5 h-5 block dark:hidden text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 mt-8 space-y-6">
+        
+        <div class="bg-blue-50 dark:bg-blue-900/30 border-l-4 border-blue-500 p-4 rounded-r-lg mb-8">
+            <p class="text-sm md:text-base text-blue-800 dark:text-blue-200">
+                在 MacBook (包含 M5 芯片机型) 上使用 <strong>加拿大法语 - CSA</strong> 键盘布局时，物理键盘依然是 QWERTY 布局，但部分标点符号键被重新映射为了法语常用的重音字母。点击下方蓝色大写字母可直接复制！
+            </p>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
+            <h2 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">
+                1. 单键直接输入 (最常用的重音字母)
+            </h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">这些字母在 CSA 布局中有自己专属的按键，无需组合键，直接按下即可：</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('é')" title="点击复制">é</span>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">e accent aigu</div>
+                        <div>按下 <kbd>/</kbd> 键</div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('è')" title="点击复制">è</span>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">e accent grave</div>
+                        <div>按下 <kbd>'</kbd> 键</div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('à')" title="点击复制">à</span>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">a accent grave</div>
+                        <div>按下 <kbd>\</kbd> 键</div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('ç')" title="点击复制">ç</span>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">c cédille</div>
+                        <div>按下 <kbd>]</kbd> 键</div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-3">* 提示：按住 <kbd>Shift</kbd> 键再按上述键，即可输入对应的大写字母 (如 É, È)。</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
+            <h2 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">
+                2. 长音符 / 软音符 (Circumflex)
+            </h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">对于带有小帽子的字母，需要使用 <kbd>[</kbd> (左方括号键) 作为“死键”（Dead key）：</p>
+            
+            <div class="bg-gray-50 dark:bg-gray-700/30 p-4 rounded-lg mb-4 text-sm">
+                <ol class="list-decimal list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                    <li>先按一下 <kbd>[</kbd> 键（屏幕上通常会显示一个带黄色底色的 `^` 符号）。</li>
+                    <li>松开后，再按下您需要的元音字母。</li>
+                </ol>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                <div class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600">
+                    <kbd>[</kbd> + <kbd>a</kbd> = <span class="text-2xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('â')">â</span>
+                </div>
+                <div class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600">
+                    <kbd>[</kbd> + <kbd>e</kbd> = <span class="text-2xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('ê')">ê</span>
+                </div>
+                <div class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600">
+                    <kbd>[</kbd> + <kbd>i</kbd> = <span class="text-2xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('î')">î</span>
+                </div>
+                <div class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600">
+                    <kbd>[</kbd> + <kbd>o</kbd> = <span class="text-2xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('ô')">ô</span>
+                </div>
+                <div class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600">
+                    <kbd>[</kbd> + <kbd>u</kbd> = <span class="text-2xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('û')">û</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 & 4 Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Section 3 -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
+                <h2 class="text-lg font-semibold mb-3 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">
+                    3. 分音符 (Tréma)
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">使用 <kbd>Shift</kbd> + <kbd>[</kbd> 作为“死键”：</p>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between text-sm">
+                        <div class="flex items-center gap-1">
+                            <kbd>Shift</kbd>+<kbd>[</kbd> , 松开按 <kbd>e</kbd>
+                        </div>
+                        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('ë')">ë</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                        <div class="flex items-center gap-1">
+                            <kbd>Shift</kbd>+<kbd>[</kbd> , 松开按 <kbd>i</kbd>
+                        </div>
+                        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('ï')">ï</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                        <div class="flex items-center gap-1">
+                            <kbd>Shift</kbd>+<kbd>[</kbd> , 松开按 <kbd>u</kbd>
+                        </div>
+                        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('ü')">ü</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
+                <h2 class="text-lg font-semibold mb-3 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">
+                    4. 特殊字母 ù
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">仅在 "où" 等极少数单词中出现。</p>
+                <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg flex items-center justify-between h-24">
+                    <div class="text-sm space-y-1">
+                        <div>1. 按住 <kbd>Option</kbd> + <kbd>'</kbd></div>
+                        <div>2. 松开后按 <kbd>u</kbd></div>
+                    </div>
+                    <span class="text-4xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('ù')">ù</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section 5 -->
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
+            <h2 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">
+                5. 法语连字与标点 (Ligatures & Quotes)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('œ')" title="点击复制">œ</span>
+                    <div>按住 <kbd>Option</kbd> + <kbd>q</kbd></div>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('æ')" title="点击复制">æ</span>
+                    <div>按住 <kbd>Option</kbd> + <kbd>a</kbd></div>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('«')" title="点击复制">«</span>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">左书名号/引号</div>
+                        <div><kbd>Option</kbd> + <kbd>\</kbd></div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400 copyable" onclick="copyText('»')" title="点击复制">»</span>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">右书名号/引号</div>
+                        <div><kbd>Opt</kbd>+<kbd>Shift</kbd>+<kbd>\</kbd></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="bg-gradient-to-br from-yellow-50 to-amber-100 dark:from-yellow-900/30 dark:to-amber-900/20 rounded-xl shadow-sm p-6 border border-yellow-200 dark:border-yellow-700/50">
+            <h2 class="text-lg font-semibold mb-3 text-amber-800 dark:text-amber-400 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                MacBook 终极备用方案：长按功能
+            </h2>
+            <p class="text-sm text-amber-900 dark:text-amber-200 leading-relaxed">
+                如果您忘记了某个重音的快捷键，只需<strong>长按对应的英文字母键（大约1秒钟）</strong>。屏幕上就会弹出一个包含该字母所有重音变体的气泡菜单，您可以直接用鼠标点击，或按菜单上显示的数字键来快速选择。例如：长按 <kbd>e</kbd> 键，就会弹出选项让您选择 é, è, ê, ë 等。
+            </p>
+        </section>
+
+    </main>
+
+    <!-- 底部信息 -->
+    <footer class="mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>直接点击页面中的大号蓝色字符即可复制</p>
+    </footer>
+
+    <!-- Toast 提示框 -->
+    <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 dark:bg-gray-100 text-white dark:text-gray-900 px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 z-50">
+        <svg class="w-5 h-5 text-green-400 dark:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span id="toastMsg">已复制！</span>
+    </div>
+
+    <!-- 交互脚本 -->
+    <script>
+        // 暗色模式切换逻辑
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        // 初始化主题
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // 复制到剪贴板功能
+        let toastTimeout;
+        function copyText(text) {
+            // 使用 document.execCommand 确保在各种 iframe 环境下也能复制
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            // 防止页面滚动
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showToast(`已复制字符: ${text}`);
+                } else {
+                    showToast('复制失败，请手动选择复制');
+                }
+            } catch (err) {
+                console.error('无法复制', err);
+                showToast('您的浏览器不支持快速复制');
+            }
+
+            document.body.removeChild(textArea);
+        }
+
+        // 显示 Toast 提示
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            
+            toastMsg.textContent = message;
+            toast.classList.add('show');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
